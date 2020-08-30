@@ -51,3 +51,44 @@ cacheSolve <- function(y, ...) {
         # return the inverse
         inverse
 }
+
+solution
+
+a$getMatrix();
+	#>      [,1] [,2]
+	#> [1,]    1   12
+	#> [2,]    2   13
+
+	cacheSolve(a)
+	#> [,1]        [,2]
+	#> [1,] -1.1818182  1.09090909
+	#> [2,]  0.1818182 -0.09090909
+
+	# the 2nd time we run the function,we get the cached value
+	cacheSolve(a)
+	#> getting cached data
+	#> [,1]        [,2]
+	#> [1,] -1.1818182  1.09090909
+	#> [2,]  0.1818182 -0.09090909
+        
+        
+        # the matrix can be created after calling a `makeCacheMatrix`
+without arguments.
+
+a$setMatrix( matrix(c(1,2,12,13), nrow = 2, ncol = 2) );
+	a$getMatrix();
+	#>      [,1] [,2]
+	#> [1,]    1   12
+	#> [2,]    2   13
+
+	cacheSolve(a)
+	#> [,1]        [,2]
+	#> [1,] -1.1818182  1.09090909
+	#> [2,]  0.1818182 -0.09090909
+
+	# the 2nd time we run the function, we get the cached value
+	cacheSolve(a)
+	#> getting cached data
+	#> [,1]        [,2]
+	#> [1,] -1.1818182  1.09090909
+	#> [2,]  0.1818182 -0.09090909
